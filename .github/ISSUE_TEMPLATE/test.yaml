@@ -1,14 +1,40 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
+name: Test Issue Template
+description: This is description
+title: "This is title "
+labels: ["bug"]
 assignees:
-  - octocat
+  - root
 body:
+  - type: markdown
+    attributes:
+      value: "## Thank you for contributing to our project!"
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: textarea1
+    attributes:
+      label: Textarea with render
+      description: "How do you trigger this bug? Please walk us through it step by step."
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
+  - type: textarea
+    id: textarea2
+    attributes:
+      label: Textarea without render
+      description: "How do you trigger this bug? Please walk us through it step by step."
+      value: |
+        1.
+        2.
+        3.
+        ...
+    validations:
+      required: true
   - type: input
     id: contact
     attributes:
@@ -17,6 +43,14 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: false
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: What is your name
+      placeholder: test
+    validations:
+      required: true
   - type: textarea
     id: what-happened
     attributes:
@@ -39,13 +73,27 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: Browsers
+      description: What browsers are you seeing the problem on?
       multiple: true
       options:
         - Firefox
         - Chrome
         - Safari
         - Microsoft Edge
+  - type: dropdown
+    id: browsers2
+    attributes:
+      label: Browsers
+      description: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+    validations:
+      required: true
   - type: textarea
     id: logs
     attributes:
